@@ -1,0 +1,86 @@
+[
+  {
+    "id": "creation-days-and-time",
+    "title": "Creation days and the beginning of time",
+    "summary": "Luther defends the narrated six days; Augustine asks whether a temporal ‘before creation’ is coherent. The questions overlap without being identical.",
+    "passages": [{"chapter": 1, "start": 1, "end": 5}, {"chapter": 1, "start": 31, "end": 31}, {"chapter": 2, "start": 1, "end": 3}],
+    "body": [
+      {"heading": "Luther: the narrative's temporal sequence", "text": "In his general discussion of the six days, Luther explicitly rejects an allegorical or figurative replacement of the sequence: Moses means creation in six days. His admission that the reason for this sequence may remain incomprehensible is part of the argument, not permission to replace the text with a different chronology.[2]", "sourceIds": ["luther1"]},
+      {"heading": "Augustine: time belongs to creation", "text": "In Confessions XI, Augustine challenges the imagined stretch of idle time before God made heaven and earth. If God creates time itself, asking what God did ‘then’ before time existed misstates the problem. This extract addresses the relation between the Creator and time; by itself it does not establish a particular length for Genesis's days.[4]", "sourceIds": ["augustine"]},
+      {"heading": "Editorial comparison and limits", "text": "The comparison distinguishes narrative sequence from the metaphysics of time. Luther's insistence on six days should not be recast as a modern scientific argument; Augustine's refusal of a pre-creation ‘then’ should not be treated as denial of every temporal sequence within creation. Luther also describes God as independent of time in his discussion of Genesis 2:2, quoted here as a control against a false opposition. These are selected historical Christian readings, not a survey of contemporary cosmology or of all Augustine's Genesis works.[2][4]", "sourceIds": ["luther1", "augustine"]}
+    ],
+    "quoteSelections": [
+      {"sourceId": "luther1", "lineStart": 1965, "lineEnd": 1970, "locator": "Chapter I, I. Introduction; paragraph beginning ‘With respect therefore’"},
+      {"sourceId": "augustine", "lineStart": 6944, "lineEnd": 6957, "locator": "Confessions, Book XI; paragraph beginning ‘But if any excursive brain’"},
+      {"sourceId": "luther1", "lineStart": 5210, "lineEnd": 5226, "locator": "Chapter II, exposition of Genesis 2:2; paragraph beginning ‘With respect to Martin Luther’"}
+    ],
+    "sourceIds": ["luther1", "augustine"],
+    "relatedIds": ["formless-matter", "divine-speech-and-word", "sabbath-and-providence"],
+    "tags": ["creation", "time", "comparison"],
+    "contested": true,
+    "status": "Editorial synthesis"
+  },
+  {
+    "id": "formless-matter",
+    "title": "Formless matter: ‘almost nothing’ is not nothing",
+    "summary": "Luther directly disputes Augustine's language of formless matter. Augustine nevertheless insists that this matter is created, not a rival eternal principle.",
+    "passages": [{"chapter": 1, "start": 1, "end": 2}],
+    "body": [
+      {"heading": "Luther's objection", "text": "On Genesis 1:2, Luther names Augustine's Confessions and rejects the account of matter as ‘as it were nothing’. He asks how what Moses already names heaven and earth can be mere nothing, allowing instead an analogy with wood not yet made into a chest or bench. The objection concerns how to describe the initial created material.[2]", "sourceIds": ["luther1"]},
+      {"heading": "Augustine's distinction", "text": "Augustine calls the unformed deep ‘almost nothing’ yet immediately says that something capable of being formed already existed. His following explanation has God make that matter out of nothing. A nearby paragraph likewise denies that heaven and earth were made out of God's own substance. Thus ‘almost nothing’ should not be silently changed into ‘nothing’, nor into an independently existing eternal material.[4]", "sourceIds": ["augustine"]},
+      {"heading": "Editorial comparison and open question", "text": "This is a disagreement about conceptual description, not evidence that one author affirms and the other denies creation by God. Luther's objection is preserved alongside Augustine's qualification rather than resolved by choosing the later writer. A fuller judgment would require comparison with the Latin and Augustine's other works on Genesis; these English editions can establish the contrast in phrasing but are not a critical-text adjudication.[2][4]", "sourceIds": ["luther1", "augustine"]}
+    ],
+    "quoteSelections": [
+      {"sourceId": "luther1", "lineStart": 2085, "lineEnd": 2095, "locator": "Chapter I, II, Part I, exposition of Genesis 1:2; paragraph beginning ‘As to Lyra’s argument’"},
+      {"sourceId": "augustine", "lineStart": 7547, "lineEnd": 7565, "locator": "Confessions, Book XII; paragraph beginning ‘But whence had it this degree of being’"},
+      {"sourceId": "augustine", "lineStart": 7567, "lineEnd": 7594, "locator": "Confessions, Book XII; paragraph beginning ‘But that heaven of heavens’; extract on the unformed deep"}
+    ],
+    "sourceIds": ["luther1", "augustine"],
+    "relatedIds": ["creation-days-and-time", "divine-speech-and-word"],
+    "tags": ["creation", "matter", "comparison"],
+    "contested": true,
+    "status": "Editorial synthesis"
+  },
+  {
+    "id": "divine-speech-and-word",
+    "title": "‘God said’: creative command and the eternal Word",
+    "summary": "Both interpreters read Genesis through the divine Word, but Luther stresses the effective command while Augustine distinguishes eternal speech from successive sounds.",
+    "passages": [{"chapter": 1, "start": 1, "end": 3}],
+    "body": [
+      {"heading": "Luther's effective word", "text": "Luther reports Augustine as interpreting ‘said’ through an eternal divine determination, then insists that God by the Word made all things. In the same exposition he calls this Word God, places the speaking within the divine essence, and says that the light is produced without. His reading is therefore not merely a claim about an audible human-like voice.[2]", "sourceIds": ["luther1"]},
+      {"heading": "Augustine's non-successive speech", "text": "Augustine says that the divine Word does not speak by finishing one item and beginning the next. All is spoken eternally. Crucially, the end of this paragraph adds that not everything made by that speech is made together or is everlasting. The distinction is between God's eternal saying and the temporal character of its effects.[4]", "sourceIds": ["augustine"]},
+      {"heading": "Editorial comparison and method", "text": "The exact passages make a simple literal-versus-spiritual binary inadequate: Luther's account is explicitly Trinitarian, while Augustine still affirms that God's saying makes things. Luther nevertheless contests the formulation he attributes to Augustine. These are Christian canonical and theological readings of Genesis; the shared identification of the Word must not be presented as a neutral lexical definition of the Hebrew phrase, or as the only possible historical reading.[2][4]", "sourceIds": ["luther1", "augustine"]}
+    ],
+    "quoteSelections": [
+      {"sourceId": "luther1", "lineStart": 2499, "lineEnd": 2509, "locator": "Chapter I, II, Part I, exposition of Genesis 1:3; paragraph beginning ‘Augustine explains the word’"},
+      {"sourceId": "luther1", "lineStart": 2527, "lineEnd": 2535, "locator": "Chapter I, II, Part I, exposition of Genesis 1:3; paragraph beginning ‘This Word was God’"},
+      {"sourceId": "augustine", "lineStart": 6841, "lineEnd": 6855, "locator": "Confessions, Book XI; paragraph beginning ‘Thou callest us then to understand the Word’"}
+    ],
+    "sourceIds": ["luther1", "augustine"],
+    "relatedIds": ["creation-days-and-time", "formless-matter", "sabbath-and-providence"],
+    "tags": ["creation", "word", "comparison"],
+    "contested": true,
+    "status": "Editorial synthesis"
+  },
+  {
+    "id": "sabbath-and-providence",
+    "title": "The seventh day: providence and promised rest",
+    "summary": "Luther distinguishes completed creation from continuing preservation; Augustine reads the seventh day's rest as a promise of eternal life.",
+    "passages": [{"chapter": 2, "start": 1, "end": 3}],
+    "body": [
+      {"heading": "Luther: rest is not abandonment", "text": "Luther handles the tension between Genesis's divine rest and Christ's statement that the Father still works. In the quoted paragraph, rest means no further design to create another heaven and earth, not cessation of preservation and government. His subsequent language separates creation-work from government-work.[2]", "sourceIds": ["luther1"]},
+      {"heading": "Augustine: the Sabbath without evening", "text": "At the close of Confessions XIII, Augustine reads the seventh day, without a narrated evening, as announcing the believer's future rest in God. He also says that God ever works and ever rests: divine rest is not a new temporal state that follows exhaustion. The interpretation is eschatological and devotional, explicitly asking how the creation account speaks to human life.[4]", "sourceIds": ["augustine"]},
+      {"heading": "Editorial comparison and limits", "text": "These excerpts differ in emphasis rather than forming a straightforward contradiction: Luther explains continued divine care for creation, and Augustine draws out promised participation in God's rest. Neither quoted position requires divine inactivity. The comparison does not establish that Luther excludes spiritual readings everywhere, or that Augustine abandons the created world for symbolism. Their wider accounts should remain open for further study.[2][4]", "sourceIds": ["luther1", "augustine"]}
+    ],
+    "quoteSelections": [
+      {"sourceId": "luther1", "lineStart": 5154, "lineEnd": 5160, "locator": "Chapter II, exposition of Genesis 2:2; paragraph beginning ‘My simple and plain reply’"},
+      {"sourceId": "luther1", "lineStart": 5177, "lineEnd": 5195, "locator": "Chapter II, exposition of Genesis 2:2; paragraph beginning ‘The solution of the question’"},
+      {"sourceId": "augustine", "lineStart": 9338, "lineEnd": 9351, "locator": "Confessions, Book XIII, concluding Sabbath meditation; paragraphs beginning ‘But the seventh day’ and ‘For then shalt Thou rest’"}
+    ],
+    "sourceIds": ["luther1", "augustine"],
+    "relatedIds": ["creation-days-and-time", "divine-speech-and-word"],
+    "tags": ["sabbath", "providence", "comparison"],
+    "contested": false,
+    "status": "Editorial synthesis"
+  }
+]

@@ -1,0 +1,96 @@
+{
+ "qa_worker": "Qwen browser QA (independent)",
+ "run_date": "2026-10-08",
+ "target": "http://127.0.0.1:64819/index.html",
+ "browser_session": "scripture-qwen-browser",
+ "note": "Single model execution on the preview build; not a model-wide benchmark. Known config-validation/loading-timeout/same-search-resubmit issues were out of scope (separate worker).",
+ "summary": {
+  "total": 10,
+  "pass": 10,
+  "fail": 0,
+  "blocked": 0
+ },
+ "checks": [
+  {
+   "id": "overview",
+   "status": "pass",
+   "evidence": "H1 'The Book of Genesis'; H2 'A narrative guide' with 8 passage links (#read/1/1 ... #read/37/1) labeled 'Editorial divisions, not source headings'; coverage panel 'Reading text King James Version / 50 chapters / 1,533 verses' vs 'Companion material 4 sourced appendices'; sidebar lists Exodus, Leviticus, Numbers, Deuteronomy each labeled 'Not yet added' (Genesis 'Available'). Screenshot qa/screenshots/qwen-01-overview.png confirms layout.",
+   "limitations": "Visual review of screenshot by parent; DOM text extraction is primary proof."
+  },
+  {
+   "id": "deep-link",
+   "status": "pass",
+   "evidence": "location.hash=#read/2/4 -> H1 'Genesis 2'; exactly 25 p.verse elements numbered 1..25; verse #v4 has class 'verse selected'; no paragraph-card elements with selection (paras[] empty). Verse 4 text begins 'These are the generations of the heavens and of the earth when\\r\\nthey were created' - CRLF wrap preserved, text not rewritten. /api/library confirms chapter 2 has 25 verses (50 chapters, 1533 verses total).",
+   "limitations": "None material."
+  },
+  {
+   "id": "chapter-menu",
+   "status": "pass",
+   "evidence": "#chapter-select is BUTTON role=combobox (Radix, not native select). Enter opened role=listbox with 50 role=option items ('1','2✓',...,'50'). End key: polled until activeElement was option '50' (async Radix focus confirmed), then Enter selected: hash=#read/50, H1 'Genesis 50', 26 p.verse numbered 1..26, trigger text '50', listbox removed. /api/library independently confirms chapter 50 has 26 verses.",
+   "limitations": "None material."
+  },
+  {
+   "id": "text-size",
+   "status": "pass",
+   "evidence": "Initial state recorded via UI: stored='20', computed 20px. Opened #text-size combobox via keyboard (options 18/20/23/26px), ArrowDown x2 to '26px', Enter: computed .verse-text font-size=26px, localStorage['scripture-library:size']='26'. location.reload(): still 26px + stored '26' (persists). Restored to 20px through the same menu UI (ArrowUp x2, Enter): stored='20', computed 20px. No direct storage writes.",
+   "limitations": "Tab was backgrounded (visibilityState=hidden); Radix Select required Emulation.setFocusEmulationEnabled(true) to open via keyboard — harness artifact, not an app defect; emulation was disabled in finally. Note: after reload, Enter-open initially failed while tab hidden; with focus emulation it opened normally."
+  },
+  {
+   "id": "menu-dismissal",
+   "status": "pass",
+   "evidence": "For both #chapter-select and #text-size: Enter opened listbox (opened=true), Escape closed it (listbox removed, aria-expanded=false) and document.activeElement returned to the same trigger (focusId=chapter-select / text-size, role=combobox). No lost focus.",
+   "limitations": "Tested with keyboard events via CDP; tab hidden but focus emulation not needed for these opens (they succeeded). Actually opens worked without emulation this time."
+  },
+  {
+   "id": "search",
+   "status": "pass",
+   "evidence": "Typed 'earth was' into #search-input, submitted form via Enter: hash=#search/earth%20was, H1 'Search Genesis', '4 verses matching', results include Genesis 1:2 (href #read/1/2) even though the stored verse text contains CRLF wrap ('darkness was upon\\r\\nthe face of the deep'). Clicked the Genesis 1:2 result -> hash #read/1/2, H1 'Genesis 1', 31 verses, p.verse#v2 has class 'selected'. No-result query 'zzzqqqxyz': '0 verses matching' plus readable empty state 'No matching verses. Try a shorter word or wording from the King James Version.'",
+   "limitations": "None material."
+  },
+  {
+   "id": "appendices",
+   "status": "pass",
+   "evidence": "Clicked 'Theological appendices' nav link -> #appendices, H1 'Theological appendices' listing 4 notes. Opened #note/creation-days-and-time: H1 'Creation days and the beginning of time'; badge 'Editorial synthesis / Distinct from the biblical text'; 3 blockquotes with actual attributed text and cites: Luther 'With respect therefore to this opinion of Augustine, we conclude that Moses spoke literally...' (cite: Martin Luther — Commentary on Genesis Vol.1, Ch. I, frozen source lines 1965-1970), Augustine 'But if any excursive brain rove over the images of forepassed times...' (Confessions Book XI, lines 6944-6957), Luther 'With respect to Martin Luther before you...' (Ch. II, lines 5210-5226). Quote text preserves CRLF wraps. Source links present (href validated only, not clicked): https://www.gutenberg.org/ebooks/48193 (Luther), https://www.gutenberg.org/ebooks/3296 (Augustine). Passage links: #read/1/1, #read/1/31, #read/2/1.",
+   "limitations": "External URLs not clicked per instructions; only href attributes validated."
+  },
+  {
+   "id": "sources",
+   "status": "pass",
+   "evidence": "#sources H1 'Sources & method'; Bibliography lists 4 works each with Edition / Translator-editor / Coverage / Rights fields (e.g. KJV: 'Project Gutenberg eBook 10; text updated October 29, 2024', 'King James Version translators; individual translators not credited', 'Rights: Public domain in the USA. Full Gutenberg notices and license retained'). Relative local copies linked: raw/kjv.txt, raw/luther1.txt, raw/luther2.txt, raw/augustine.txt. Same-origin fetch('/raw/kjv.txt') -> 200 text/plain; charset=utf-8, 4,451,854 chars, starts 'The Project Gutenberg eBook of The King James Version of the Bible\\r\\n' (preserved source text incl. CRLF). Extra grounding: API sourceStart/sourceEnd slices for Gen 1:1 and 1:2 match raw file exactly. fetch('/application/.env') -> 404 (body not read).",
+   "limitations": "Only one raw link fetched per instructions; other three verified as hrefs only."
+  },
+  {
+   "id": "theme-and-mobile",
+   "status": "pass",
+   "evidence": "Theme: initial data-theme=dark (ls 'scripture-library:theme'='dark', bg rgb(14,14,14)). Clicked 'Light mode' button -> data-theme=light, bg rgb(255,255,255), button flips to 'Dark mode'; location.reload() keeps light (ls persisted). Restored to dark via the same button at end. Mobile: Emulation.setDeviceMetricsOverride calibrated so window.innerWidth==390 exactly (harness proxy scales overrides by 1/0.9; set 351x760 -> observed 390x844). Reader #read/2/4 at 390: documentElement.scrollWidth==clientWidth==390, zero elements with right>391. Overview #home at 390: same, no overflow. Chapter menu open at 390: listbox rect x=63 w=61 (right=124<=390), y=395 h=320 (bottom=715<=844) inside viewport; text-size menu rect x=167 w=76, y=395 h=129 inside. Menu asserted open before and after screenshot (open after shot: True). Screenshot qa/screenshots/qwen-02-reader-390-chaptermenu.png. Cleanup: setDeviceMetricsOverride re-applied at harness baseline (1672x947 dpr2 -> observed 1858x1052 dpr1.8, matching session start) and setFocusEmulationEnabled(false) in finally; no browser zoom touched.",
+   "limitations": "Harness CDP proxy makes Emulation.clearDeviceMetricsOverride a no-op (viewport stuck at last override); restoration was done by re-applying the exact baseline override instead. One intermediate tab got stuck at 355px and was closed (it was my own extra tab, not a pre-existing one)."
+  },
+  {
+   "id": "invalid-and-navigation",
+   "status": "pass",
+   "evidence": "#read/999 -> H1 'Page not found', breadcrumb 'Unknown reference', text 'This reference is not in the current library. Return to Genesis.' Malformed #search/% -> same 'Page not found' screen (hash stays #search/%). history.back() from #search/% -> #read/999 (Page not found, correct prior entry); back again -> #home 'The Book of Genesis'; forward -> #read/999; forward -> #search/% — each screen matches its route. Ending route restored to #read/2/4 (H1 'Genesis 2'), 0 listboxes open, both comboboxes aria-expanded=false. Screenshot qa/screenshots/qwen-03-final-read-2-4.png.",
+   "limitations": "None material."
+  }
+ ],
+ "environment_observations": [
+  "Harness CDP proxy scales Emulation.setDeviceMetricsOverride by ~1/0.9 and its clearDeviceMetricsOverride is a no-op on this backend; baseline was restored by re-applying the harness's own override (observed 1858x1052 dpr1.8, identical to session start).",
+  "Tab runs backgrounded (visibilityState=hidden); Radix Select keyboard opening intermittently required Emulation.setFocusEmulationEnabled(true), disabled in finally. Harness artifact, not an app defect.",
+  "One extra tab opened during viewport diagnosis got stuck at 355px due to the proxy clear bug and was closed; it was created by this QA run, not pre-existing."
+ ],
+ "artifacts": [
+  "qa/browser-qwen-report.json",
+  "qa/browser-qwen-report.md",
+  "qa/screenshots/qwen-01-overview.png",
+  "qa/screenshots/qwen-02-reader-390-chaptermenu.png",
+  "qa/screenshots/qwen-03-final-read-2-4.png"
+ ],
+ "restored_state": {
+  "route": "#read/2/4",
+  "theme": "dark (initial)",
+  "text_size": "20px (initial)",
+  "menus": "all closed",
+  "viewport": "harness baseline 1858x1052 dpr1.8",
+  "focus_emulation": "false",
+  "device_metrics_override": "re-applied at harness baseline (proxy clear is no-op)"
+ }
+}

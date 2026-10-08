@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 1,
+  "works": [
+    {
+      "id": "luther-genesis-1",
+      "sourceId": "luther1",
+      "manifest": "raw/manifest.json",
+      "author": "Martin Luther",
+      "title": "Commentary on Genesis, Volume I — Luther on the Creation",
+      "coverage": "Genesis 1:1–4:14. The closing Genesis 4:8–14 material overlaps Volume II; editions are kept separate.",
+      "completeness": "Complete archived volume, including editorial introductions. Not the complete Genesis lectures.",
+      "boundaries": [
+        {
+          "id": "genesis-1",
+          "marker": "CHAPTER I.",
+          "title": "Genesis 1",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "genesis-2",
+          "marker": "CHAPTER II.",
+          "title": "Genesis 2",
+          "kind": "commentary",
+          "genesisChapters": [
+            2
+          ]
+        },
+        {
+          "id": "genesis-3",
+          "marker": "CHAPTER III.",
+          "title": "Genesis 3",
+          "kind": "commentary",
+          "genesisChapters": [
+            3
+          ]
+        },
+        {
+          "id": "genesis-4",
+          "marker": "CHAPTER IV.",
+          "title": "Genesis 4 — opening material",
+          "kind": "commentary",
+          "genesisChapters": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luther-genesis-2",
+      "sourceId": "luther2",
+      "manifest": "raw/manifest.json",
+      "author": "Martin Luther",
+      "title": "Commentary on Genesis, Volume II — Luther on Sin and the Flood",
+      "coverage": "Genesis 4:8–9:29. Opening material revises/reprints the preceding volume’s closing Genesis 4:8–14 discussion.",
+      "completeness": "Complete archived volume, including editorial introductions. Not the complete Genesis lectures.",
+      "boundaries": [
+        {
+          "id": "genesis-4",
+          "marker": "CHAPTER IV.",
+          "title": "Genesis 4",
+          "kind": "commentary",
+          "genesisChapters": [
+            4
+          ]
+        },
+        {
+          "id": "genesis-5",
+          "marker": "CHAPTER V.",
+          "title": "Genesis 5",
+          "kind": "commentary",
+          "genesisChapters": [
+            5
+          ]
+        },
+        {
+          "id": "genesis-6",
+          "marker": "CHAPTER VI.",
+          "title": "Genesis 6",
+          "kind": "commentary",
+          "genesisChapters": [
+            6
+          ]
+        },
+        {
+          "id": "genesis-7",
+          "marker": "CHAPTER VII.",
+          "title": "Genesis 7",
+          "kind": "commentary",
+          "genesisChapters": [
+            7
+          ]
+        },
+        {
+          "id": "genesis-8",
+          "marker": "CHAPTER VIII.",
+          "title": "Genesis 8",
+          "kind": "commentary",
+          "genesisChapters": [
+            8
+          ]
+        },
+        {
+          "id": "genesis-9",
+          "marker": "CHAPTER IX.",
+          "title": "Genesis 9",
+          "kind": "commentary",
+          "genesisChapters": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "augustine-confessions",
+      "sourceId": "augustine",
+      "manifest": "raw/manifest.json",
+      "author": "Augustine of Hippo",
+      "title": "Confessions",
+      "coverage": "Complete Books I–XIII. Genesis-related reflections are concentrated in Books XI–XIII; this is not a running Genesis commentary.",
+      "completeness": "Complete archived English translation, with original notices available in the source file.",
+      "boundaries": [
+        {
+          "id": "book-1",
+          "marker": "BOOK I",
+          "title": "Book I",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-2",
+          "marker": "BOOK II",
+          "title": "Book II",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-3",
+          "marker": "BOOK III",
+          "title": "Book III",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-4",
+          "marker": "BOOK IV",
+          "title": "Book IV",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-5",
+          "marker": "BOOK V",
+          "title": "Book V",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-6",
+          "marker": "BOOK VI",
+          "title": "Book VI",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-7",
+          "marker": "BOOK VII",
+          "title": "Book VII",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-8",
+          "marker": "BOOK VIII",
+          "title": "Book VIII",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-9",
+          "marker": "BOOK IX",
+          "title": "Book IX",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-10",
+          "marker": "BOOK X",
+          "title": "Book X",
+          "kind": "meditation",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-11",
+          "marker": "BOOK XI",
+          "title": "Book XI — Genesis-related reflections",
+          "kind": "meditation",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "book-12",
+          "marker": "BOOK XII",
+          "title": "Book XII — Genesis-related reflections",
+          "kind": "meditation",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "book-13",
+          "marker": "BOOK XIII",
+          "title": "Book XIII — Genesis-related reflections",
+          "kind": "meditation",
+          "genesisChapters": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "augustine-city-of-god-1",
+      "sourceId": "augustine-city-1",
+      "manifest": "raw/commentaries/manifest-2026-10-08.json",
+      "author": "Augustine of Hippo",
+      "title": "The City of God, Volume 1",
+      "coverage": "Complete Books 1–13. Books XI–XIII discuss creation, humanity and the fall.",
+      "completeness": "Complete archived volume, including historical footnotes and separately labeled editorial matter. Not a running Genesis commentary.",
+      "boundaries": [
+        {
+          "id": "book-1",
+          "marker": "                              BOOK FIRST.",
+          "title": "Book 1",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-2",
+          "marker": "                             BOOK SECOND.",
+          "title": "Book 2",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-3",
+          "marker": "                              BOOK THIRD.",
+          "title": "Book 3",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-4",
+          "marker": "                            BOOK FOURTH.[155]",
+          "title": "Book 4",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-5",
+          "marker": "                            BOOK FIFTH.[183]",
+          "title": "Book 5",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-6",
+          "marker": "                              BOOK SIXTH.",
+          "title": "Book 6",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-7",
+          "marker": "                             BOOK SEVENTH.",
+          "title": "Book 7",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-8",
+          "marker": "                             BOOK EIGHTH.",
+          "title": "Book 8",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-9",
+          "marker": "                              BOOK NINTH.",
+          "title": "Book 9",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-10",
+          "marker": "                              BOOK TENTH.",
+          "title": "Book 10",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-11",
+          "marker": "                            BOOK ELEVENTH.",
+          "title": "Book 11",
+          "kind": "treatise",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "book-12",
+          "marker": "                             BOOK TWELFTH.",
+          "title": "Book 12",
+          "kind": "treatise",
+          "genesisChapters": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": "book-13",
+          "marker": "                           BOOK THIRTEENTH.",
+          "title": "Book 13",
+          "kind": "treatise",
+          "genesisChapters": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "publisher-matter",
+          "marker": "                             LIST OF WORKS",
+          "title": "Publisher’s advertisements — editorial material",
+          "kind": "frontmatter",
+          "genesisChapters": []
+        },
+        {
+          "id": "transcriber-notes",
+          "marker": "Transcriber's Notes:",
+          "title": "Transcriber’s notes — editorial material",
+          "kind": "frontmatter",
+          "genesisChapters": []
+        }
+      ]
+    },
+    {
+      "id": "augustine-city-of-god-2",
+      "sourceId": "augustine-city-2",
+      "manifest": "raw/commentaries/manifest-2026-10-08.json",
+      "author": "Augustine of Hippo",
+      "title": "The City of God, Volume 2",
+      "coverage": "Complete Books 14–22. Book XIV continues the discussion of the fall; later books are also available, without claiming verse-level mapping.",
+      "completeness": "Complete archived volume, including historical footnotes and separately labeled editorial matter. Not a running Genesis commentary.",
+      "boundaries": [
+        {
+          "id": "book-14",
+          "marker": "                          BOOK FOURTEENTH.[1]",
+          "title": "Book 14",
+          "kind": "treatise",
+          "genesisChapters": [
+            3
+          ]
+        },
+        {
+          "id": "book-15",
+          "marker": "                            BOOK FIFTEENTH.",
+          "title": "Book 15",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-16",
+          "marker": "                            BOOK SIXTEENTH.",
+          "title": "Book 16",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-17",
+          "marker": "                           BOOK SEVENTEENTH.",
+          "title": "Book 17",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-18",
+          "marker": "                           BOOK EIGHTEENTH.",
+          "title": "Book 18",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-19",
+          "marker": "                           BOOK NINETEENTH.",
+          "title": "Book 19",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-20",
+          "marker": "                            BOOK TWENTIETH.",
+          "title": "Book 20",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-21",
+          "marker": "                          BOOK TWENTY-FIRST.",
+          "title": "Book 21",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "book-22",
+          "marker": "                          BOOK TWENTY-SECOND.",
+          "title": "Book 22",
+          "kind": "treatise",
+          "genesisChapters": []
+        },
+        {
+          "id": "indexes",
+          "marker": "                               INDEXES.",
+          "title": "Indexes and publisher’s matter — editorial material",
+          "kind": "frontmatter",
+          "genesisChapters": []
+        },
+        {
+          "id": "transcriber-notes",
+          "marker": "Transcriber's Notes:",
+          "title": "Transcriber’s notes — editorial material",
+          "kind": "frontmatter",
+          "genesisChapters": []
+        }
+      ]
+    },
+    {
+      "id": "basil-hexameron",
+      "sourceId": "basil-hexameron",
+      "manifest": "raw/commentaries/manifest-2026-10-08.json",
+      "author": "Basil of Caesarea",
+      "title": "Hexæmeron — Nine Homilies on Creation",
+      "coverage": "The six days of creation in Genesis 1. Nine homilies, not a complete commentary on Genesis or an exhaustive treatment of humanity’s creation.",
+      "completeness": "All nine homilies and their historical introduction/notes, selected from the larger NPNF anthology. Other works in the anthology are not imported.",
+      "body": {
+        "startMarker": "   Introduction to the Hexæmeron.",
+        "endMarker": "   Introduction to the Letters."
+      },
+      "boundaries": [
+        {
+          "id": "editorial-introduction",
+          "marker": "   Introduction to the Hexæmeron.",
+          "title": "Historical editorial introduction",
+          "kind": "frontmatter",
+          "genesisChapters": []
+        },
+        {
+          "id": "homily-1",
+          "marker": "   Homily I.",
+          "title": "Homily I",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-2",
+          "marker": "   Homily II.",
+          "title": "Homily II",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-3",
+          "marker": "   Homily III.",
+          "title": "Homily III",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-4",
+          "marker": "   Homily IV.",
+          "title": "Homily IV",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-5",
+          "marker": "   Homily V.",
+          "title": "Homily V",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-6",
+          "marker": "   Homily VI.",
+          "title": "Homily VI",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-7",
+          "marker": "   Homily VII.",
+          "title": "Homily VII",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-8",
+          "marker": "   Homily VIII.",
+          "title": "Homily VIII",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        },
+        {
+          "id": "homily-9",
+          "marker": "   Homily IX.",
+          "title": "Homily IX",
+          "kind": "commentary",
+          "genesisChapters": [
+            1
+          ]
+        }
+      ],
+      "textPolicy": "Exact slices of the archived CCEL plain-text export of the historical 1895 translation. Source offsets count decoded Unicode characters, not bytes. Indentation, textual transliterations, numbered references and historical footnotes are retained; this is not a critical Greek edition. Chapter associations are curated navigation links. CCEL edition-use conditions remain applicable; see source rights."
+    }
+  ],
+  "gaps": [
+    {
+      "author": "Martin Luther",
+      "title": "Genesis 10–50",
+      "reason": "No additional reusable English text was verified in this acquisition pass. The modern American Edition covers later chapters but is not cleared for import. Existing public-domain volumes overlap in Genesis 4.",
+      "sourceUrl": "https://s3.amazonaws.com/cph-org-assets/media/pdf/151744.pdf"
+    },
+    {
+      "author": "Martin Luther",
+      "title": "Henry Cole’s 1858 translation, Genesis 1–5",
+      "reason": "An earlier alternative translation witness is available, but its OCR is visibly uncorrected and needs scan-based proofreading before import. It does not extend coverage beyond Genesis 9.",
+      "sourceUrl": "https://archive.org/details/creationcommenta00luth"
+    },
+    {
+      "author": "Augustine of Hippo",
+      "title": "The Literal Meaning of Genesis; On Genesis against the Manichees",
+      "reason": "Modern English translations were located, but no reusable English edition was cleared for this import. The included Confessions and City of God are related works, not substitutes labeled as these commentaries.",
+      "sourceUrl": "https://www.cuapress.org/9780813210889/on-genesis"
+    }
+  ]
+}

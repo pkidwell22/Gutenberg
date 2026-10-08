@@ -1,0 +1,5 @@
+# Source checksums and Unicode offsets require exact archived bytes.
+# Do not normalize source snapshots or generated canonical corpora.
+raw/** -text
+data/library.js -text
+data/commentaries.json -text

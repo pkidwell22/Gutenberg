@@ -1,0 +1,25 @@
+# Local configuration and credentials (templates may be versioned)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies, compiled output and test artifacts
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+__pycache__/
+*.py[cod]
+
+# Local runtime data, logs and database backups
+.local/
+pgdata/
+*.log
+*.dump
+*.sql.gz
+
+# macOS metadata
+.DS_Store
