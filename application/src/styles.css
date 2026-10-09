@@ -277,3 +277,14 @@ mark { background: var(--wash); color: var(--ink); }
   .commentary-provenance { display: block; }
 }
 
+/* Editorial messianic promises: exact Scripture text, differentiated in red. */
+:root { --messianic: #b4232c; }
+:root[data-theme=dark] { --messianic: #ff8c94; }
+.messianic-verse .verse-text { color: var(--messianic); }
+.messianic-legend { font-size: 11px; color: var(--muted); margin: -10px 0 24px; max-width: 750px; }
+.messianic-notes p { margin: 8px 0; }
+.messianic-notes li { scroll-margin-top: 90px; }
+@media print {
+  :root, :root[data-theme=dark] { --messianic: #b4232c; }
+}
+

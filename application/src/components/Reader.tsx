@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Book, Chapter, Library, Route } from '../../shared/library';
 import { preferences } from '../lib/preferences';
+import { messianicNoteId, messianicPassageFor, messianicPassages } from '../lib/messianicPassages';
 import { ChapterCommentaries } from './ChapterCommentaries';
 import { StyledSelect } from './StyledSelect';
 import { Breadcrumb, externalLink, verseLink } from './References';
@@ -19,15 +20,28 @@ export function ReaderControls({book,chapter}:{book:Book;chapter:number}) {
 }
 export function ChapterText({chapter,verse}:{chapter:Chapter;verse:number}) {
   return <article className="scripture" aria-label={`Genesis chapter ${chapter.number}`}>
-    {chapter.verses.map(item=><p className={`verse${item.number===verse ? ' selected' : ''}`} id={`v${item.number}`} key={item.number}>
-      <a className="verse-number" href={verseLink(chapter.number,item.number)} aria-label={`Link to Genesis ${chapter.number}:${item.number}`}>{item.number}</a><span className="verse-text">{item.text}</span>
-    </p>)}
+    {chapter.verses.map(item=>{
+      const promise=messianicPassageFor(chapter.number,item.number);
+      return <p className={`verse${item.number===verse ? ' selected' : ''}${promise ? ' messianic-verse' : ''}`} id={`v${item.number}`} key={item.number} aria-describedby={promise ? messianicNoteId(promise) : undefined}>
+        <a className="verse-number" href={verseLink(chapter.number,item.number)} aria-label={`Link to Genesis ${chapter.number}:${item.number}`}>{item.number}</a><span className="verse-text">{item.text}</span>
+      </p>;
+    })}
   </article>;
 }
 export function SideCommentary({library,chapter}:{library:Library;chapter:number}) {
   const related=library.notes.filter(note=>note.passages.some(p=>p.chapter===chapter));
   const source=library.sources.find(s=>s.id===library.book.sourceId);
-  return <aside className="reading-aside"><section><h2>Alongside this chapter</h2>
+  const promises=messianicPassages.filter(p=>p.chapter===chapter);
+  return <aside className="reading-aside">
+    {promises.length>0 && <section className="messianic-notes"><h2>Messianic promises</h2>
+      <p>Editorial Christian interpretation; not additional biblical text.</p>
+      <ul>{promises.map(p=><li id={messianicNoteId(p)} key={p.start}>
+        <a href={verseLink(chapter,p.start)}>Genesis {chapter}:{p.start}{p.end!==p.start ? `–${p.end}` : ''} — {p.title}</a>
+        <p>{p.explanation}</p>
+        <a className="subtle" href={p.evidenceUrl} {...(p.evidenceUrl.startsWith('https:') ? {target:'_blank',rel:'noopener noreferrer'} : {})}>{p.evidence}</a>
+      </li>)}</ul>
+    </section>}
+    <section><h2>Alongside this chapter</h2>
     {related.length ? <ul>{related.map(note=><li key={note.id}><a href={`#note/${note.id}`}>{note.title}</a><span className="subtle">Editorial appendix with primary sources</span></li>)}</ul> : <p>No appendix has been added for this chapter yet.</p>}
     <a href="#appendices">All theological appendices</a></section>
     <ChapterCommentaries chapter={chapter}/>
@@ -41,6 +55,7 @@ export function Reader({library,route}:{library:Library;route:Extract<Route,{pag
   useEffect(()=>{preferences.set('position',verseLink(route.chapter,route.verse));},[route.chapter,route.verse]);
   return <><Breadcrumb label="Chapter reader" /><div className="reader-heading"><div><h1>Genesis {chapter.number}</h1><p className="muted">King James Version <span aria-hidden="true">/</span> Biblical text</p></div></div>
     <ReaderControls book={library.book} chapter={chapter.number} />
+    <p className="messianic-legend">Red text marks messianic promises in traditional Christian interpretation, not words spoken by Jesus. Explanations appear alongside the chapter.</p>
     <div className="reader-grid"><div><ChapterText chapter={chapter} verse={route.verse}/>
       <nav className="chapter-nav" aria-label="Chapter navigation">
         {chapter.number>1 ? <a id="previous-chapter" href={`#read/${chapter.number-1}`}>Previous chapter</a> : <span>Beginning of Genesis</span>}

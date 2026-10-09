@@ -12,6 +12,17 @@ describe('commentary presentation (source-level, not visual validation)',()=>{
   });
 });
 
+describe('messianic highlighting (source-level, not visual validation)',()=>{
+  it('uses dedicated red tokens for light, dark and print while retaining normal verse numbering',()=>{
+    const css=readFileSync(new URL('./styles.css',import.meta.url),'utf8');
+    expect(css).toContain('--messianic: #b4232c');
+    expect(css).toContain('--messianic: #ff8c94');
+    expect(css).toMatch(/\.messianic-verse \.verse-text\s*\{[^}]*color: var\(--messianic\)/);
+    expect(css).toMatch(/@media print\s*\{\s*:root, :root\[data-theme=dark\]\s*\{[^}]*--messianic: #b4232c/);
+    expect(css).not.toMatch(/\.messianic-verse \.verse-number\s*\{/);
+  });
+});
+
 describe('presentation preservation (source-level, not visual validation)', () => {
   it('retains the original stylesheet verbatim before scoped Radix additions', () => {
     const legacy=readFileSync(new URL('../../style.css',import.meta.url),'utf8');
