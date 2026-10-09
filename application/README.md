@@ -32,6 +32,8 @@ All application assets are bundled locally. Reading needs the local API and Post
 
 ## Local runtime on this Mac
 
+For copy-paste **daily startup, first-time installation, configuration, health checks and shutdown**, use the [root README](../README.md#start-the-app-on-this-mac). It is the primary terminal-command guide; the sections here explain the application and data contracts.
+
 PostgreSQL 18 is installed through Homebrew. Scripture Library uses its own cluster, **not** Homebrew's default cluster:
 
 ```text
@@ -43,32 +45,7 @@ The runtime directory and socket are private to your OS user. PostgreSQL uses pe
 
 Databases: `scripture_library` (application) and `scripture_library_test` (tests). Test suites create isolated, randomly named schemas inside the test database and remove only those schemas. Database files are outside Git and outside the HTTP-served app.
 
-Check whether the database is running:
-
-```sh
-/opt/homebrew/opt/postgresql@18/bin/pg_isready \
-  -h "$HOME/Library/Application Support/Scripture Library/run" -p 65432
-```
-
-If it is stopped, run it in a terminal and keep that terminal open:
-
-```sh
-LC_ALL=en_US.UTF-8 /opt/homebrew/opt/postgresql@18/bin/postgres \
-  -D "$HOME/Library/Application Support/Scripture Library/postgres" \
-  -k "$HOME/Library/Application Support/Scripture Library/run" \
-  -p 65432 -h '' -c unix_socket_permissions=0700 -c max_connections=30
-```
-
-`LC_ALL` is necessary for this Homebrew/macOS startup path. Do not delete a lock file just because startup fails: first verify whether the existing server is running.
-
-In a second terminal:
-
-```sh
-cd "$HOME/Desktop/Repositories/Scripture Library/application"
-npm start
-```
-
-The API serves the compiled app at <http://127.0.0.1:64817/index.html#read/2/4> with the local configuration. The original Python server has been replaced on that port, and the original-origin browser settings were read back unchanged after handoff. Do not run two API instances on the same port. Ctrl-C stops the foreground API; stopping the database separately does not delete data.
+The root README's `pg_ctl start` command starts this dedicated database in the background with a log outside Git. The API's `npm start` remains a foreground command: keep its terminal open, and use Ctrl-C to stop it. Check the documented health URL before starting a second API instance. Existing browser preferences stay on the original 64817 origin.
 
 ## Development and rebuild
 
@@ -76,8 +53,10 @@ The local `.env` is ignored by Git. `.env.example` describes the format; do not 
 
 ```sh
 npm ci
+npm run corpus:check
 npm run db:migrate
 npm run db:import
+npm run db:import-commentaries
 npm run build
 npm start
 ```
